@@ -1,0 +1,230 @@
+Result
+
+Starting: brickrun -r --directory="/home/robot/TP3" "/home/robot/TP3/main.py"
+----------
+pyenv shell archlinux
+==================================================
+TEST DE CALIBRATION - ROBOT EV3
+==================================================
+
+--- TEST 1: Calibration du diamètre ---
+
+Le robot va avancer de 1000 mm
+Marquez la position de départ
+
+Appuyez sur le bouton CENTRAL pour démarrer
+
+Déplacement en cours...
+
+Résultats:
+  Distance théorique: 1000 mm
+  Distance mesurée: 1016.0 mm
+  Angle moteur gauche: 2097.0°
+  Angle moteur droit: 2100.0°
+  Rotations moyennes: 5.83
+
+Mesurez la distance REELLE parcourue avec un mètre
+
+Entrez la valeur en mm:
+Par exemple, si vous mesurez 98.5 cm, entrez 985
+
+CALCUL DU DIAMETRE REEL:
+
+Formule: D_reel = distance_reelle / (3.14159 × 5.83)
+
+  Si 950 mm → D = 51.9 mm (écart: -3.6 mm, -6.5%)
+  Si 980 mm → D = 53.5 mm (écart: -2.0 mm, -3.6%)
+  Si 1000 mm → D = 54.6 mm (écart: -0.9 mm, -1.6%)
+  Si 1020 mm → D = 55.7 mm (écart: +0.2 mm, +0.4%)
+  Si 1050 mm → D = 57.3 mm (écart: +1.8 mm, +3.3%)
+
+Notez la valeur de D calculée pour votre mesure!
+
+
+--- TEST 2: Calibration de la voie ---
+
+Le robot va tourner sur lui-même de 360°
+Marquez l'orientation de départ
+
+Appuyez sur le bouton CENTRAL pour démarrer
+
+Calibration gyroscope... NE PAS BOUGER!
+✓ Gyroscope calibré
+
+Rotation en cours...
+
+Résultats:
+  Angle théorique: 360°
+  Angle mesuré (odométrie): 361.0°
+  Angle moteur gauche: 701.0°
+  Angle moteur droit: -701.0°
+  Angle mesuré (gyroscope): -391.0°
+
+  Distance roue gauche: 339.5 mm
+  Distance roue droite: -339.5 mm
+  Différence: 679.0 mm
+
+Utilisation angle gyroscope: -391.0°
+
+CALCUL DE LA VOIE REELLE:
+
+  Si angle réel = 350° → V = 111.2 mm (écart: +3.2 mm, +2.9%)
+  Si angle réel = 355° → V = 109.6 mm (écart: +1.6 mm, +1.5%)
+  Si angle réel = 360° → V = 108.1 mm (écart: +0.1 mm, +0.1%)
+  Si angle réel = 365° → V = 106.6 mm (écart: -1.4 mm, -1.3%)
+  Si angle réel = 370° → V = 105.1 mm (écart: -2.9 mm, -2.6%)
+
+Notez la valeur de V calculée!
+
+
+--- TEST 3: Vérification gyroscope ---
+
+Le robot va tourner 90° gauche puis 90° droite
+
+Appuyez sur le bouton CENTRAL
+
+Rotation gauche...
+  Angle gyro après 90°: -100.0°
+Rotation droite...
+  Angle gyro retour à 0°: -25.0°
+
+⚠ Dérive du gyroscope: -25.0°
+
+==================================================
+RESUME DES RECOMMENDATIONS
+==================================================
+
+Dans votre code principal, modifiez:
+
+  WHEEL_DIAMETER = ??? # Voir calculs TEST 1
+  AXLE_TRACK = ???     # Voir calculs TEST 2
+
+Valeurs actuelles:
+  WHEEL_DIAMETER = 55.50000000000001
+  AXLE_TRACK = 108
+
+==================================================
+TEST TERMINE
+==================================================
+Pybricks MicroPython v1.11 on 2020-05-06; linux version
+Use Ctrl-D to exit, Ctrl-E for paste mode
+>>> 
+
+
+
+
+
+Starting: brickrun -r --directory="/home/robot/TP3" "/home/robot/TP3/main.py"
+----------
+pyenv shell archlinux
+==================================================
+TP3 : FILTRE DE KALMAN
+==================================================
+Calibration gyroscope... NE PAS BOUGER!
+Gyroscope calibré!
+Démarrage du robot... Circuit en 8
+==================================================
+T: 1099 ms | Dist: 139 mm | Kalman: x= 153 y= -5 θ= -1 °
+T: 2005 ms | Dist: 276 mm | Kalman: x= 289 y= -9 θ= -5 °
+T: 3031 ms | Dist: 430 mm | Kalman: x= 442 y= -19 θ= -3 °
+T: 4006 ms | Dist: 575 mm | Kalman: x= 588 y= -6 θ= 12 °
+T: 5001 ms | Dist: 725 mm | Kalman: x= 733 y= 27 θ= 15 °
+T: 6002 ms | Dist: 875 mm | Kalman: x= 873 y= 80 θ= 19 °
+T: 9014 ms | Dist: 1326 mm | Kalman: x= 1262 y= 306 θ= 34 °
+T: 10035 ms | Dist: 1481 mm | Kalman: x= 1370 y= 412 θ= 44 °
+T: 11082 ms | Dist: 1637 mm | Kalman: x= 1489 y= 515 θ= 43 °
+T: 12003 ms | Dist: 1776 mm | Kalman: x= 1595 y= 603 θ= 41 °
+T: 13033 ms | Dist: 1930 mm | Kalman: x= 1716 y= 699 θ= 35 °
+T: 14072 ms | Dist: 2086 mm | Kalman: x= 1832 y= 803 θ= 38 °
+T: 15083 ms | Dist: 2238 mm | Kalman: x= 1953 y= 895 θ= 34 °
+T: 16003 ms | Dist: 2375 mm | Kalman: x= 2064 y= 976 θ= 34 °
+T: 17040 ms | Dist: 2530 mm | Kalman: x= 2199 y= 1051 θ= 19 °
+T: 18089 ms | Dist: 2688 mm | Kalman: x= 2351 y= 1092 θ= 12 °
+T: 19031 ms | Dist: 2830 mm | Kalman: x= 2492 y= 1092 θ= -6 °
+T: 20079 ms | Dist: 2987 mm | Kalman: x= 2635 y= 1030 θ= -30 °
+T: 21089 ms | Dist: 3139 mm | Kalman: x= 2767 y= 958 θ= -27 °
+T: 22069 ms | Dist: 3286 mm | Kalman: x= 2896 y= 888 θ= -27 °
+T: 23003 ms | Dist: 3426 mm | Kalman: x= 3002 y= 797 θ= -52 °
+T: 24052 ms | Dist: 3583 mm | Kalman: x= 3058 y= 651 θ= -75 °
+T: 25043 ms | Dist: 3732 mm | Kalman: x= 3093 y= 507 θ= -85 °
+T: 26089 ms | Dist: 3888 mm | Kalman: x= 3088 y= 351 θ= -97 °
+T: 27079 ms | Dist: 4037 mm | Kalman: x= 3076 y= 204 θ= -89 °
+T: 30097 ms | Dist: 4490 mm | Kalman: x= 3024 y= -245 θ= -93 °
+T: 31042 ms | Dist: 4632 mm | Kalman: x= 3002 y= -385 θ= -97 °
+T: 33007 ms | Dist: 4926 mm | Kalman: x= 2958 y= -675 θ= -92 °
+T: 34022 ms | Dist: 5079 mm | Kalman: x= 2955 y= -828 θ= -93 °
+T: 35030 ms | Dist: 5230 mm | Kalman: x= 2967 y= -978 θ= -85 °
+T: 36031 ms | Dist: 5380 mm | Kalman: x= 2990 y= -1126 θ= -78 °
+T: 37098 ms | Dist: 5540 mm | Kalman: x= 3032 y= -1280 θ= -70 °
+T: 38077 ms | Dist: 5687 mm | Kalman: x= 3091 y= -1415 θ= -62 °
+T: 39083 ms | Dist: 5838 mm | Kalman: x= 3172 y= -1543 θ= -58 °
+T: 40089 ms | Dist: 5989 mm | Kalman: x= 3260 y= -1664 θ= -56 °
+T: 43067 ms | Dist: 6436 mm | Kalman: x= 3541 y= -2009 θ= -41 °
+T: 44077 ms | Dist: 6587 mm | Kalman: x= 3659 y= -2104 θ= -37 °
+T: 45085 ms | Dist: 6738 mm | Kalman: x= 3786 y= -2184 θ= -31 °
+T: 51028 ms | Dist: 7630 mm | Kalman: x= 4634 y= -2444 θ= -15 °
+T: 52015 ms | Dist: 7778 mm | Kalman: x= 4777 y= -2483 θ= -15 °
+T: 53034 ms | Dist: 7931 mm | Kalman: x= 4925 y= -2521 θ= -12 °
+T: 54074 ms | Dist: 8087 mm | Kalman: x= 5074 y= -2567 θ= -16 °
+T: 55080 ms | Dist: 8238 mm | Kalman: x= 5216 y= -2618 θ= -22 °
+T: 57006 ms | Dist: 8526 mm | Kalman: x= 5441 y= -2795 θ= -51 °
+T: 58036 ms | Dist: 8681 mm | Kalman: x= 5521 y= -2926 θ= -67 °
+T: 59095 ms | Dist: 8840 mm | Kalman: x= 5536 y= -3083 θ= -90 °
+T: 60065 ms | Dist: 8986 mm | Kalman: x= 5553 y= -3228 θ= -83 °
+T: 61069 ms | Dist: 9137 mm | Kalman: x= 5562 y= -3379 θ= -90 °
+T: 62049 ms | Dist: 9283 mm | Kalman: x= 5522 y= -3518 θ= -118 °
+T: 63077 ms | Dist: 9437 mm | Kalman: x= 5432 y= -3643 θ= -127 °
+T: 64008 ms | Dist: 9577 mm | Kalman: x= 5329 y= -3737 θ= -137 °
+T: 65017 ms | Dist: 9729 mm | Kalman: x= 5201 y= -3815 θ= -150 °
+T: 66024 ms | Dist: 9880 mm | Kalman: x= 5068 y= -3887 θ= -152 °
+T: 67028 ms | Dist: 10031 mm | Kalman: x= 4931 y= -3953 θ= -154 °
+T: 68038 ms | Dist: 10182 mm | Kalman: x= 4794 y= -4015 θ= -156 °
+T: 69058 ms | Dist: 10335 mm | Kalman: x= 4652 y= -4073 θ= -159 °
+T: 70082 ms | Dist: 10488 mm | Kalman: x= 4508 y= -4127 θ= -156 °
+T: 72017 ms | Dist: 10779 mm | Kalman: x= 4241 y= -4238 θ= -155 °
+T: 73017 ms | Dist: 10929 mm | Kalman: x= 4111 y= -4311 θ= -144 °
+T: 74022 ms | Dist: 11080 mm | Kalman: x= 3989 y= -4399 θ= -141 °
+T: 75014 ms | Dist: 11228 mm | Kalman: x= 3875 y= -4495 θ= -139 °
+T: 76033 ms | Dist: 11381 mm | Kalman: x= 3769 y= -4605 θ= -128 °
+T: 77007 ms | Dist: 11527 mm | Kalman: x= 3688 y= -4727 θ= -119 °
+T: 78025 ms | Dist: 11680 mm | Kalman: x= 3628 y= -4866 θ= -113 °
+T: 79034 ms | Dist: 11831 mm | Kalman: x= 3572 y= -5006 θ= -112 °
+T: 80055 ms | Dist: 11984 mm | Kalman: x= 3507 y= -5146 θ= -115 °
+T: 81023 ms | Dist: 12130 mm | Kalman: x= 3458 y= -5282 θ= -106 °
+T: 82051 ms | Dist: 12284 mm | Kalman: x= 3430 y= -5433 θ= -94 °
+T: 83036 ms | Dist: 12432 mm | Kalman: x= 3422 y= -5581 θ= -91 °
+T: 84065 ms | Dist: 12586 mm | Kalman: x= 3430 y= -5734 θ= -83 °
+T: 85070 ms | Dist: 12736 mm | Kalman: x= 3455 y= -5882 θ= -77 °
+T: 86094 ms | Dist: 12890 mm | Kalman: x= 3492 y= -6031 θ= -75 °
+T: 87071 ms | Dist: 13037 mm | Kalman: x= 3547 y= -6168 θ= -62 °
+T: 88084 ms | Dist: 13189 mm | Kalman: x= 3607 y= -6307 θ= -64 °
+T: 89081 ms | Dist: 13338 mm | Kalman: x= 3668 y= -6444 θ= -64 °
+T: 91013 ms | Dist: 13629 mm | Kalman: x= 3775 y= -6712 θ= -69 °
+T: 92024 ms | Dist: 13780 mm | Kalman: x= 3830 y= -6855 θ= -69 °
+T: 94003 ms | Dist: 14076 mm | Kalman: x= 3919 y= -7136 θ= -81 °
+T: 95055 ms | Dist: 14235 mm | Kalman: x= 3926 y= -7294 θ= -96 °
+T: 96092 ms | Dist: 14390 mm | Kalman: x= 3887 y= -7443 θ= -113 °
+T: 97010 ms | Dist: 14528 mm | Kalman: x= 3817 y= -7561 θ= -132 °
+T: 98013 ms | Dist: 14679 mm | Kalman: x= 3699 y= -7653 θ= -138 °
+T: 99005 ms | Dist: 14827 mm | Kalman: x= 3589 y= -7755 θ= -141 °
+T: 100010 ms | Dist: 14978 mm | Kalman: x= 3469 y= -7843 θ= -153 °
+T: 101079 ms | Dist: 15138 mm | Kalman: x= 3312 y= -7867 θ= -180 °
+T: 102090 ms | Dist: 15290 mm | Kalman: x= 3161 y= -7859 θ= -191 °
+T: 110099 ms | Dist: 16491 mm | Kalman: x= 2103 y= -7298 θ= -208 °
+T: 111099 ms | Dist: 16642 mm | Kalman: x= 1970 y= -7231 θ= -207 °
+T: 112070 ms | Dist: 16787 mm | Kalman: x= 1833 y= -7182 θ= -198 °
+T: 115012 ms | Dist: 17228 mm | Kalman: x= 1400 y= -7110 θ= -180 °
+T: 116031 ms | Dist: 17382 mm | Kalman: x= 1249 y= -7133 θ= -165 °
+T: 117055 ms | Dist: 17535 mm | Kalman: x= 1100 y= -7170 θ= -164 °
+T: 118090 ms | Dist: 17690 mm | Kalman: x= 948 y= -7197 θ= -167 °
+T: 124037 ms | Dist: 18582 mm | Kalman: x= 187 y= -7626 θ= -129 °
+T: 125047 ms | Dist: 18734 mm | Kalman: x= 89 y= -7740 θ= -128 °
+T: 126042 ms | Dist: 18884 mm | Kalman: x= 5 y= -7864 θ= -126 °
+T: 127076 ms | Dist: 19038 mm | Kalman: x= -80 y= -7992 θ= -124 °
+T: 131086 ms | Dist: 19640 mm | Kalman: x= -446 y= -8469 θ= -128 °
+T: 135009 ms | Dist: 20228 mm | Kalman: x= -929 y= -8771 θ= -179 °
+T: 136035 ms | Dist: 20382 mm | Kalman: x= -1079 y= -8741 θ= -195 °
+T: 137065 ms | Dist: 20536 mm | Kalman: x= -1227 y= -8696 θ= -195 °
+Program ended by stop button
+----------
+Completed successfully.
