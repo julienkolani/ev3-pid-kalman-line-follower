@@ -1,33 +1,28 @@
 # EV3 PID Kalman Line Follower
 
-Line-following robot controller for LEGO Mindstorms EV3, implemented in Pybricks MicroPython. Three control strategies of increasing sophistication: Bang-Bang, PID, and Kalman filter-based state estimation.
+Robot suiveur de ligne EV3 Lego en Pybricks MicroPython avec trois stratégies de contrôle de complexité croissante.
 
-## Overview
+## Présentation
 
-Implements reactive robot control with sensor fusion (color sensor + gyroscope). Tracks position via three parallel methods for comparison and validation. Logs 15+ real-time metrics per cycle.
+Implémentation de la régulation sur robot réel avec fusion de capteurs (capteur couleur + gyroscope). Trois méthodes de suivi de position en parallèle pour comparaison et validation. Enregistrement de 15+ métriques par cycle.
 
-## Features
+## Stratégies de contrôle
 
-- Bang-Bang threshold control
-- PID controller (Kp=1.2, Ki=0.1, Kd=0.001) with adaptive speed for curves
-- Kalman filter for position/angle estimation fusing odometry and gyroscope
-- Three position tracking methods: PID integration, robot state, gyroscope
-- DataLog system recording x, y, theta, velocity, error, command
-- Obstacle detection with ultrasonic sensor
+- **Bang-Bang** — Contrôle à seuil simple
+- **PID** — Correcteur Proportionnel-Intégral-Dérivé (Kp=1.2, Ki=0.1, Kd=0.001) avec anti-windup et adaptation de vitesse en courbe
+- **Filtre de Kalman** — Estimation de position par fusion odométrie + gyroscope
 
-## Tech Stack
+## Stack technique
 
-- Pybricks MicroPython (EV3)
-- LEGO Mindstorms EV3 brick
-- Color sensor, gyroscope, ultrasonic sensor
-- Motors (Port B/C)
+- Pybricks MicroPython
+- LEGO Mindstorms EV3 (brique, capteur couleur, gyroscope, ultrason)
 
 ## Structure
 
-- `tp/TP1-TP2/` - Bang-Bang and PID implementations
-- `tp/tp3_kalman/` - Kalman filter and advanced position tracking
-- `td/` - Calibration and image view exercises
+- `tp/TP1-TP2/` — Implémentations Bang-Bang et PID
+- `tp/tp3_kalman/` — Filtre de Kalman et suivi de position avancé
+- `td/` — Exercices de calibration et vue image
 
-## Setup
+## Déploiement
 
-Deploy Python files to EV3 brick using Pybricks IDE or VS Code extension. Requires Pybricks firmware on EV3.
+Déposer les fichiers Python sur la brique EV3 via l'IDE Pybricks ou l'extension VS Code.
